@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>สำหรับพี่แก้ม</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+    font-family: 'TH SarabunPSK';
+    src: url('THSarabunPSK.woff2') format('woff2'),
+        url('THSarabunPSK.woff') format('woff'),
+        url('THSarabunPSK.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div id="mainDiv"> 
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* สุขสันต์วันครบรอบ 5 เดือนนะครับแฟน,</span><br />
+				<span class="space"/><span class="comments">* เขาเลยทำเว็บนี้ขึ้นมาเพื่อวันครบรอบนะคิคิ ตั้งใจทำมาก.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Near"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Gam"</span>);<br />
+				<span class="comments">// 25 มกราคม 2567 เป็นวันที่เราได้คบกันอะเน้วๆๆๆ. </span><br />
+				i.love(u);<br />
+				<span class="comments">// เขาโชคดีมากๆเลยที่ได้เธอมาดูแล เธอดูแลเขาได้ดีมาตลอด รักอ้วนนะ.</span><br />
+				u.takeCareOf(me);<br />
+				<span class="comments">// ตั้งแต่วันที่เราได้รักกันเขารักและคิดถึงเธอมาตลอด ทุกๆวันเลยนะอ้วร.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// เขาก็ไม่รู้ว่าเค้าดูแลเธอดีรึป่าว แต่เขาตั้งใจดูแลอ้วนให้ดีๆมาตลอดเลยนะ.</span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// มันไม่ง่ายเลยที่เราจะรักษาความสัมพันธ์กันได้ขนาดนี้ เค้าอยากให้เธออยู่กับเค้าไปนานๆเลยนะ ตั้งใจรักเธอมาตลอด รักมากๆ เป็นประโยคสุดท้ายที่เค้าจะเขียนแล้วนะรักอ้วน.</span><br />
+				i.love(u)themost;<br />
+				<span class="comments">// ปล.เค้าคิดไม่ออกแล้วแต่รักอ้วนจริงๆนะ มีอะไรก็บอกได้เสมอเค้าอยู่ข้างเธอตลอดอยากให้ช่วยอะไรก็บอกได้หมดคิคิ</span><br />
+				i.liveHappilyWith(u);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						P'Gam, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						รักและแคร์เธอเสมอนะแจ๊ะ.<br/>
+						<div class="signature">- NongNear</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2024, 1, 25);
+		together.setHours(16);
+		together.setMinutes(11);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
